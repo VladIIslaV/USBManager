@@ -30,10 +30,7 @@ namespace Laba_4
             var ejectedDevice = new VolumeDeviceClass().SingleOrDefault(v => v.LogicalDrive == this.DeviceName.Remove(2));
             ejectedDevice.Eject(false);
             ejectedDevice = new VolumeDeviceClass().SingleOrDefault(v => v.LogicalDrive == tempName);
-            if (ejectedDevice == null)
-                return true;
-            else
-                return false;
+            return (ejectedDevice == null);
         }
     }
 }
